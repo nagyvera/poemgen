@@ -1,0 +1,25 @@
+{% extends "poemgen/base.html" %}
+{% block content %}
+<div class=hatter>   
+<h1>Versgenerátor</h1>
+<h5>Hogy a versgenerálás kezdetét vehesse, kérlek adj meg egy szót!</h5>
+<div class="form-group">
+<form action="/yourpoem/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" id="starterWord" value = "Generálj!" onclick="generate()">
+</form>
+<script>
+function generate(){
+    var input_word = document.getElementById("id_input_word").value;
+    if(input_word == ""){
+        alert("Mindenképp adj meg egy szót!")
+    }else{
+    alert(input_word);
+    }
+}
+</script>
+</div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,13 @@
+{% extends "poemgen/base.html" %}
+{% block content %}
+    {% for text in texts %}
+        <article class="media content-section">
+            <div class="media-body">
+            <div class="article-metadata">
+                <h2>{{ text.title }}</h2>
+            </div>
+            <p class="article-content">{{ text.content }}</p>
+            </div>
+        </article>
+    {% endfor %}
+{% endblock content %}
