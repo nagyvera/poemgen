@@ -2,12 +2,12 @@ body {
     background: #c0c0c0;
     color: #ffffff;
     margin-top: 5rem;
-    font-family: "URW Chancery L", cursive;
+    font-family: "Courier New", cursive;
   }
   
   h1, h2, h3, h4, h5, h6 {
     color: #c22727;
-    font-family: "URW Chancery L";
+    font-family: "Courier New";
   }
   
   ul {
