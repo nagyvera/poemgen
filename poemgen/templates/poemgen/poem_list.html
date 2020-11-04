@@ -1,14 +1,14 @@
 {% extends "poemgen/base.html" %}
-{% block content %} 
-{% for poem in poems %}
-    <article class="media content-section">
-        <div class="media-body">
-        <div class="article-metadata">
-            <h3>{{ poem.title }}</h3>
-            <small class="text-muted">{{ poem.date_posted }}</small>
-        </div>
-        <p class="article-content">{{ poem.content }}</p>
-        </div>
-    </article>
-{% endfor %}
+{% block content %}
+	{% for poem in poems %}
+		<article class="media content-section">
+			<div class="media-body">
+    			<div class="article-metadata">
+    				<h3>{{ poem.title }}</h3>
+					<small class="text-muted">{{ poem.published_date }}</small>
+				</div>
+    			<p class="article-content">{{ poem.text|linebreaksbr }}</p>
+			</div>
+		</article>
+	{% endfor %}
 {% endblock content %} 

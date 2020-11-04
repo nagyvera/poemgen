@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect
+from django.utils import timezone
 from .models import Poem
 from .forms import PoemGenForm
 
 def poem_list(request):
-    return render(request, 'poemgen/post_list.html', {})
+    poems = Poem.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    return render(request, 'poemgen/poem_list.html', {'poems':poems})
 
 posts = [
     {
