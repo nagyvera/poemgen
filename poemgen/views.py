@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.utils import timezone
-from .models import Poem
+from .models import Poem, Word
 from .forms import PoemGenForm
+from .generator import *
 
 def poem_list(request):
     poems = Poem.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
@@ -65,13 +66,8 @@ def about(request):
     return render(request, 'poemgen/about.html', context)
 
 def generator(request):
-    context = {}
-    form = PoemGenForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-    context['form'] = form
-    return render(request, 'poemgen/generator.html', context)
+     form = PoemGenForm()
+     return render(request, 'poemgen/generator.html', {'form':form})
 
 def yourpoem(request):
-    context = {}
-    return render(request, 'poemgen/yourpoem.html', context)
+    return render(request, 'poemgen/yourpoem.html',)

@@ -4,10 +4,15 @@
 <h1>Versgenerátor</h1>
 <h5>Hogy a versgenerálás kezdetét vehesse, kérlek adj meg egy szót!</h5>
 <div class="form-group">
-<form action="/yourpoem/" method="post">
+<form action="/yourpoem/" method="get">
     {% csrf_token %}
-    {{ form }}
-    <input type="submit" id="starterWord" value = "Generálj!" onclick="generate()">
+    {{title}}
+    <div class="form-group">
+            <input id=poem.title class="form-control" type="text" name="poem.title" placeholder="Ide írd a szót!">
+            <div class="firstcont">
+                    <input class="btn btn-default" type="submit" value = "Generálj!" onclick="generate()">Generálj!</input>
+            </div>
+    </div>
 </form>
 <script>
 function generate(){
@@ -17,6 +22,8 @@ function generate(){
     }else{
     alert(input_word);
     }
+    poemtext = stochastic_chain(input_word)
+    return input_word, poemtext
 }
 </script>
 </div>

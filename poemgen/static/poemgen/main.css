@@ -84,9 +84,22 @@ body {
 
   .hatter{
     background-color: #ffffff;
-    padding: 25px;
+    padding: 40px;
   }
 
   .generaltvers{
     display: none;
   }
+
+  a, a:hover{
+    background-color:#c22727;
+    color: white;
+    text-decoration: none;
+  }
+ .firstcont {   
+    text-align: center; 
+    margin: auto;
+    position: fixed;
+    padding: 10px;
+  }
+
