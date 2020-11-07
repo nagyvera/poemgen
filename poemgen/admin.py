@@ -3,4 +3,4 @@ from .models import Poem, PoemDetails
 
 # Register your models here.
 admin.site.register(Poem)
-admin.side.register(PoemDetails)
+admin.site.register(PoemDetails)
