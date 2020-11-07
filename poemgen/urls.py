@@ -8,4 +8,6 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('generator/', views.generator, name='generator'),
     path('yourpoem/', views.yourpoem, name='yourpoem'),
+    #path('poemdetails/', views.poemdetails, name='poemdetails'),
+    #path('display/', views.poemdetails),
 ]

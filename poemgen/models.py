@@ -14,10 +14,11 @@ class Poem(models.Model):
     def __str__(self):
         return self.title
 
-class Word(models.Model):
-    input_word = models.CharField(max_length=200)
+class PoemDetails(models.Model):
+    title = models.CharField(max_length=200)
+    text = models.CharField(max_length=450)
 
     def __str__(self):
-        return self.input_word
+        return self.title
         
 

@@ -1,19 +1,21 @@
 {% extends "poemgen/base.html" %}
 {% block content %}
-<h1> Generált versed:</h1>
-<form action="" method="POST" class="poem-form">
-    {% csrf_token %}
+<h2> Generált versek:</h2>
 <article class="media content-section">    
-    <div class=media-body>
-        <div class="article-metadata">
-            <h3>Cím helye {{poem.title}}</h3>
-        </div>
-        <p class="article-content">Text helye{{poem.text}}</p>
-    </div>
+    <table>
+        {% for item in poems %}
+        <tr>
+            <th>Megadott szó:</th>
+            <td>{{item.title}}</td>
+        </tr>
+        <tr> 
+            <th>Generált vers:</th>
+            <td> {{item.text}} </td>
+        </tr>
+        {% endfor %}
+    </table>
 </article>
     <div class="buttons">
-        <input class="btn btn-default btn-default active" type="submit" value="Mentés">
         <a href="/generator" class="btn btn-default btn-default active" role="button">Új vers generálása</a>
     </div>
-</form>
 {% endblock content %}
