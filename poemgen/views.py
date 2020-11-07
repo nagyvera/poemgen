@@ -4,43 +4,9 @@ from .models import Poem, PoemDetails
 from .forms import PoemModelForm
 from .generator import *
 
-def poem_list(request):
+def home(request):
     poems = Poem.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'poemgen/poem_list.html', {'poems':poems})
-
-posts = [
-    {
-        'title': 'Első vers - megadott szó: haza',
-        'content': 'haza vágyom. Összebuvó félelem homályával nagyranyilt szemük',
-        'date_posted': '2020-09-20'
-    },
-    {
-        'title': 'Második vers - megadott szó: magam',
-        'content': ' magam búsultató dolga volt ő: embernyi , sárga irka ',
-        'date_posted': '2020-09-21'
-    },
-    {
-        'title': 'Harmadik vers - megadott szó: harc',
-        'content': ' harc nagy szégyeneiért , rabmadaracskám ! meghalok s társadtól jön a gyér fűből bő harmat gördül ',
-        'date_posted': '2020-10-07'
-    },
-    {
-        'title': 'Negyedik vers - megadott szó: harc',
-        'content': ' Harc ez - Bocsáss, fölsikálja a fizetséged ? Gyengék vagyunk; szenet árul , fölsikálja a fizetséged ',
-        'date_posted': '2020-10-07'
-    },
-    {
-        'title': 'Ötödik vers - megadott szó: harc',
-        'content': ' Harc ez kijárt neki . Március. A tőkések hasznáról Dagassz gázlángnál kenyeret, amiket a gangon',
-        'date_posted': '2020-10-07'
-    },
-    {
-        'title': 'Hatodik vers - megadott szó: virág',
-        'content': ' virág , ha nem hagytuk volna ott terem gyönyörűszép szívemen el - Ellenség ha tör borsot ',
-        'date_posted': '2020-10-17'
-    }
-
-]
+    return render(request, 'poemgen/home.html', {'poems':poems})
 
 texts =[
     {
@@ -56,12 +22,6 @@ texts =[
         'content': 'Továbbfejlesztési lehetőségnek említeném: A markov-lánccal való generálást helyettesíthetnénk MI által generálással, a szövegek hosszának és tördelésének módosításával rímképlet szerinti generálást is meg lehetne valósítani.'
     }
 ]
-
-def home(request):
-    context = {
-        'posts':posts
-    }
-    return render(request, 'poemgen/home.html', context)
 
 def about(request):
     context = {
