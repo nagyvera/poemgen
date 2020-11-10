@@ -8,7 +8,7 @@ from random import random
 import re #regex
 
 # osszes kotet felhasznalasa
-file_names = glob.glob('poemgen/kotetek/*.txt')
+file_names = glob.glob('poemgen/poemgen/kotetek/*.txt')
 
 # kotetek db szama ellenorzeskent: 
 #print(len(file_names))
