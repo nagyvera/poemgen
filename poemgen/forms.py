@@ -1,4 +1,4 @@
-from django.forms import ModelForm,widgets
+from django.forms import ModelForm, widgets
 from .models import PoemDetails
 
 class PoemModelForm(ModelForm):
@@ -6,5 +6,5 @@ class PoemModelForm(ModelForm):
         model = PoemDetails
         fields = ['title']
         widgets = {
-            'text': widgets.HiddenInput
+            'text': widgets.HiddenInput()
         }

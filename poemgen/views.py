@@ -37,10 +37,10 @@ def generator(request):
     if request.method == 'POST':
         form = PoemModelForm(request.POST)
         if form.is_valid():
-
+            p=form.save(commit=False)
+            p.text=(stochastic_chain(p.title))
             p = form.save()
             poems = PoemDetails.objects.all()
-
             return render(request, 'poemgen/yourpoem.html', {'poems': poems})
 
     else:

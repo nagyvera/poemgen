@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import pandas as pd #data structure
 import numpy as np #data alignment
 import glob # pathname matching
@@ -6,7 +8,7 @@ from random import random
 import re #regex
 
 # osszes kotet felhasznalasa
-file_names = glob.glob('kotetek/*.txt')
+file_names = glob.glob('poemgen/kotetek/*.txt')
 
 # kotetek db szama ellenorzeskent: 
 #print(len(file_names))
@@ -124,4 +126,4 @@ def stochastic_chain(seed, length=9):
         current_word = next_word
     return sentence
 
-#print(stochastic_chain('magam'))
+#print(stochastic_chain('Március'))
