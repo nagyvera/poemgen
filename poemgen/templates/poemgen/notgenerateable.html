@@ -1,0 +1,28 @@
+{% extends "poemgen/base.html" %}
+{% block content %}
+
+<h4>Sajnos ezzel a szóval nem tudsz generálni!</h4>
+<p>Kérlek próbálj meg beírni más szót! Amennyiben ötletre lenne szükséged, nézd ezt a listát:</p>
+
+<table class=exampleWords>
+  <tr>
+    <th>magam</th>
+    <th>kék</th>
+    <th>eső</th>
+    <th>macska</th>
+    <th>hall</th>
+  </tr>
+  <tr>
+    <th>virág</th>
+    <th>vers</th>
+    <th>szó</th>
+    <th>szív</th>
+    <th>harc</th>
+  </tr>
+</table> 
+
+<div class="buttons">
+    <a href="/generator" class="btn btn-default btn-default active" role="button">Új vers generálása</a>
+</div>
+ 
+{% endblock content %}

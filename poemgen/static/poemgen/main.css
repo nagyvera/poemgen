@@ -102,4 +102,42 @@ body {
     position: fixed;
     padding: 10px;
   }
+  .inptstl {
+    text-align: center;
+    margin: 10px;
+  }
+  
+  #id_button{
+    background-color: #c22727;
+    color: white;
+  }
 
+  #id_title{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+    margin: 5px;
+  }
+  
+  .exampleWords{
+    border-collapse: collapse;
+    background-color: white;
+    color: #c22727;
+    padding: 15px;
+    width: 100%;
+  }
+
+  th{
+    text-align: center;
+    height: 50px;
+  }
+
+  .buttons{
+    padding: 10px;
+  }
+
+  .yptable{
+    padding: 10px;
+    text-align: center;
+  }

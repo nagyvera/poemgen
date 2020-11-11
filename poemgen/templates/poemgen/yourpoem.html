@@ -2,15 +2,17 @@
 {% block content %}
 <h2> Generált versek:</h2>
 <article class="media content-section">    
-    <table>
+    <table class = yptable>
         {% for item in poems %}
         <tr>
             <th>Megadott szó:</th>
-            <td>{{item.title}}</td>
+            <th>Generált vers:</th>
+            <th></th>
         </tr>
         <tr> 
-            <th>Generált vers:</th>
+            <td>{{item.title}}</td>
             <td> {{item.text}} </td>
+            <td></td>
         </tr>
         {% endfor %}
     </table>

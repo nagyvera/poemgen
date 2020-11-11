@@ -32,20 +32,23 @@ def about(request):
 def yourpoem(request):
     return render(request, 'poemgen/yourpoem.html')
 
+def notgenerateable(request):
+    return render(request, 'poemgen/notgenerateable.html')
+
 def generator(request):
-
-    if request.method == 'POST':
-        form = PoemModelForm(request.POST)
-        if form.is_valid():
-            p=form.save(commit=False)
-            p.text=(stochastic_chain(p.title))
-            p = form.save()
-            poems = PoemDetails.objects.all()
-            return render(request, 'poemgen/yourpoem.html', {'poems': poems})
-
-    else:
-        form_class = PoemModelForm
-
-    return render(request, 'poemgen/generator.html', {
-        'form': form_class,
-    })
+    try:
+        if request.method == 'POST':
+            form = PoemModelForm(request.POST)
+            if form.is_valid():
+                p=form.save(commit=False)
+                p.text=(stochastic_chain(p.title))
+                p = form.save()
+                poems = PoemDetails.objects.all()
+                return render(request, 'poemgen/yourpoem.html', {'poems': poems})
+        else:
+            form_class = PoemModelForm
+        return render(request, 'poemgen/generator.html', {
+            'form': form_class,
+        })
+    except KeyError:
+        return render(request, 'poemgen/notgenerateable.html', {'poems': poems})

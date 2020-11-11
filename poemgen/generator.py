@@ -8,7 +8,11 @@ from random import random
 import re #regex
 
 # osszes kotet felhasznalasa
+#in web:
 file_names = glob.glob('poemgen/poemgen/kotetek/*.txt')
+
+#in localhost:
+#file_names = glob.glob('poemgen/kotetek/*.txt')
 
 # kotetek db szama ellenorzeskent: 
 #print(len(file_names))
@@ -126,4 +130,5 @@ def stochastic_chain(seed, length=9):
         current_word = next_word
     return sentence
 
+#ellenőrző hívás:
 #print(stochastic_chain('Március'))
