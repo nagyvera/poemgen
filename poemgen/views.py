@@ -51,4 +51,4 @@ def generator(request):
             'form': form_class,
         })
     except KeyError:
-        return render(request, 'poemgen/notgenerateable.html', {'poems': poems})
+        return render(request, 'poemgen/notgenerateable.html')
