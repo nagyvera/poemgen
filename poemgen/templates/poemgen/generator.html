@@ -1,13 +1,13 @@
 {% extends "poemgen/base.html" %}
 {% block content %}
 <div class=hatter>   
-<h1>Versgenerátor</h1>
+<h2>Versgenerátor</h2>
 <h5>Hogy a versgenerálás kezdetét vehesse, kérlek adj meg egy szót!</h5>
 <div class="form-group">
 <form action="" method="post">
     {% csrf_token %}
     <div class="inptstl">
-    <table>
+    <table class="tblig">
     {{form.as_table}}
     </table>
     <input type="submit" id= "id_button" class="btn btn-default btn-default active" value="Generálás"/>

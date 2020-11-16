@@ -11,15 +11,15 @@ def home(request):
 texts =[
     {
         'title': 'Az appról',
-        'content': ' Szakdolgozatom célja, olyan versgenerátor szoftver elkészítése, amely a magyar nyelvű generáláson kívül különböző szempontoknak is megfelel, mint a kulcsszavak szerinti generálás, különböző művészek stílusának átemelése - stílusnak való megfelelés, mondatonként - szakaszonként egybefüggő nyelvezet.'
+        'content': ' Szakdolgozatom célja, olyan versgenerátor weboldal elkészítése, amely a magyar nyelvű generáláson kívül különböző szempontoknak is megfelel, mint a kulcsszavak szerinti generálás, különböző művészek stílusának átemelése - stílusnak való megfelelés, mondatonként/szakaszonként egybefüggő nyelvezet.'
     },
     {
         'title': 'Hogyan generálj?',
-        'content':' A generátor fülre kattintva, csupán egyetlen szó beírásával párszavas verset kapsz, vezetett útmutatás vár az oldalon. Amennyiben az általad beírt szó szerepel az adatbázisban láthatod az eredményt, ellenkező esetben ...'
+        'content':' A generátor fülre kattintva, csupán egyetlen szó beírásával párszavas verset kapsz, vezetett útmutatás vár az oldalon. Amennyiben az általad beírt szó szerepel az adatbázisban láthatod az eredményt, ellenkező esetben átirányít egy oldalra, ahol példa szavakat találsz.'
     },
     {
         'title': 'Lehetőségek',
-        'content': 'Továbbfejlesztési lehetőségnek említeném: A markov-lánccal való generálást helyettesíthetnénk MI által generálással, a szövegek hosszának és tördelésének módosításával rímképlet szerinti generálást is meg lehetne valósítani.'
+        'content': 'Továbbfejlesztési lehetőségnek említeném: A markov-lánccal való generálást helyettesíthetnénk MI által generálással, a szövegek hosszának felhasználótól való bekérésével és tördelésének módosításával rímképlet szerinti generálást is meg lehetne valósítani. Érdemes lehet minden további fejlesztés előtt szókészlet bővítést alkalmazni.'
     }
 ]
 
@@ -32,8 +32,8 @@ def about(request):
 def yourpoem(request):
     return render(request, 'poemgen/yourpoem.html')
 
-def notgenerateable(request):
-    return render(request, 'poemgen/notgenerateable.html')
+def notgeneratable(request):
+    return render(request, 'poemgen/notgeneratable.html')
 
 def generator(request):
     try:
@@ -51,4 +51,4 @@ def generator(request):
             'form': form_class,
         })
     except KeyError:
-        return render(request, 'poemgen/notgenerateable.html')
+        return render(request, 'poemgen/notgeneratable.html')

@@ -7,5 +7,5 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('generator/', views.generator, name='generator'),
     path('yourpoem/', views.yourpoem, name='yourpoem'),
-    path('notgenerateable/', views.notgenerateable, name='notgenerateable'),
+    path('notgeneratable/', views.notgeneratable, name='notgeneratable'),
 ]
